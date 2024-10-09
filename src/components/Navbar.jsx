@@ -1,4 +1,4 @@
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/bugema.png';
 import { NavLink } from 'react-router-dom';
 
 const isActive = ({isActive}) => isActive ? "text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2" : "text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2";
@@ -16,10 +16,10 @@ const Navbar = () => {
             <img
               className="h-10 w-auto"
               src={logo}
-              alt="React Jobs"
+              alt="Bugema University Jobs"
             />
             <span className="hidden md:block text-white text-2xl font-bold ml-2"
-              >React Jobs</span
+              >Bugema University Jobs</span
             >
           </NavLink>
           <div className="md:ml-auto">

@@ -1,4 +1,4 @@
-const Hero = ({title="Become a React Dev", subtitle="Find the React job that fits your skills and needs"}) => {
+const Hero = ({title="Become a Bugema Employee", subtitle="Find the a job that fits your skills and needs"}) => {
   return (
     <section className="bg-indigo-700 py-20 mb-4">
       <div
