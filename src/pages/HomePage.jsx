@@ -1,8 +1,8 @@
-import React from 'react'
 import Hero from '../components/Hero';
 import HomeCards from '../components/HomeCards';
 import JobListings from '../components/JobListings';
 import ViewJobsBtn from '../components/ViewJobsBtn';
+import Developers from './Developers';
 
 const HomePage = () => {
   return (
@@ -11,6 +11,7 @@ const HomePage = () => {
     <HomeCards /> 
     <JobListings isHome/>
     <ViewJobsBtn />  
+    <Developers /> 
     </>
   )    
 }
