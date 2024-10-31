@@ -7,11 +7,11 @@ const JobPage = ({deleteJob}) => {
   const job = useLoaderData();
   const navigate = useNavigate();
 
-  const onDeleteClick = (jobId) => {
+  const onDeleteClick = (jobUuid) => {
     const confirm = window.confirm('Are you sure you want to delete this job?');
 
     if (!confirm) return;
-    deleteJob(jobId);
+    deleteJob(jobUuid);
     toast.success('Job deleted successfully!');
 
     navigate('/jobs');
@@ -59,7 +59,7 @@ const JobPage = ({deleteJob}) => {
 
               <h3 className="text-indigo-800 text-lg font-bold mb-2">Salary</h3>
 
-              <p className="mb-4">{job.salary} / Year</p>
+              <p className="mb-4">{job.salary} / month</p>
             </div>
           </main>
 
@@ -92,13 +92,13 @@ const JobPage = ({deleteJob}) => {
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-xl font-bold mb-6">Manage Job</h3>
               <Link
-                to={`/edit-job/${job.id}`}
+                to={`/edit-job/${job.uuid}`}
                 className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                 >Edit Job</Link
               >
               <button
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
-                onClick={() => onDeleteClick(job.id)}
+                onClick={() => onDeleteClick(job.uuid)}
               >
                 Delete Job
               </button>
@@ -112,7 +112,7 @@ const JobPage = ({deleteJob}) => {
 }
 
 const jobLoader = async ({params}) => {
-  const response = await fetch(`/api/jobs/${params.id}`);
+  const response = await fetch(`/api/jobs/${params.uuid}`);
   const data = await response.json();
   return data;
 }

@@ -35,7 +35,7 @@ const JobListings = ({isHome = false}) => {
           {isLoading ? <Spinner loading={isLoading}/> : 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
            {jobs.map(job =>(
-            <JobListing job={job} key= {job.id}/>
+            <JobListing job={job} key= {job.uuid}/>
          ))}
           </div>}
       </div>
