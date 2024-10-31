@@ -17,13 +17,13 @@ const EditJobPage = ({updateJob}) => {
   const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
 
   const navigate = useNavigate();
-  const {id} = useParams();
+  const {uuid} = useParams();
 
   const handleEditSubmitForm = (e) => {
       e.preventDefault();
 
       const updatedJob = {
-        id,
+        uuid,
         title,
         type,
         location,
@@ -43,7 +43,7 @@ const EditJobPage = ({updateJob}) => {
 
       toast.success("Job updated successfully")
 
-      return navigate(`/jobs/${id}`)
+      return navigate(`/jobs/${uuid}`)
   };
      
   return (
@@ -108,7 +108,7 @@ const EditJobPage = ({updateJob}) => {
 
           <div className="mb-4">
             <label htmlFor="type" className="block text-gray-700 font-bold mb-2"
-              >Salary</label
+              >Salary per month</label
             >
             <select
               id="salary"
@@ -118,17 +118,17 @@ const EditJobPage = ({updateJob}) => {
               value={salary}
               onChange={(e) => setSalary(e.target.value)}
             >
-              <option value="Under $50K">Under $50K</option>
-              <option value="$50K - 60K">$50K - $60K</option>
-              <option value="$60K - 70K">$60K - $70K</option>
-              <option value="$70K - 80K">$70K - $80K</option>
-              <option value="$80K - 90K">$80K - $90K</option>
-              <option value="$90K - 100K">$90K - $100K</option>
-              <option value="$100K - 125K">$100K - $125K</option>
-              <option value="$125K - 150K">$125K - $150K</option>
-              <option value="$150K - 175K">$150K - $175K</option>
-              <option value="$175K - 200K">$175K - $200K</option>
-              <option value="Over $200K">Over $200K</option>
+              <option value="Under Shs500K">Under Shs500K</option>
+              <option value="Shs500K - Shs800K">Shs500K - Shs800K</option>
+              <option value="Shs800K - Shs900K">Shs800K - Shs900K</option>
+              <option value="Shs1M - Shs1.2M">Shs1M - Shs1.2M</option>
+              <option value="Shs1.2M - Shs1.4M">Shs1.2M - Shs1.4M</option>
+              <option value="Shs1.4M - Shs1.6M">Shs1.4M - Shs1.6M</option>
+              <option value="Shs1.6M - Shs2M">Shs1.6M - Shs1.8M</option>
+              <option value="Shs2M - Shs2.2M">Shs2M - Shs2.2M</option>
+              <option value="Shs2.2M - Shs2.5M">Shs2.2M - Shs2.5M</option>
+              <option value="Shs2.5M - Shs3M">Shs2.5M - Shs3M</option>
+              <option value="Over Shs3M">Over Shs3M</option>
             </select>
           </div>
 
@@ -193,7 +193,7 @@ const EditJobPage = ({updateJob}) => {
               id="contact_email"
               name="contact_email"
               className="border rounded w-full py-2 px-3"
-              placeholder="Email address htmlFor applicants"
+              placeholder="Email address for applicants"
               required
               value={contactEmail}
               onChange={(e) => setContactEmail(e.target.value)}
@@ -210,7 +210,7 @@ const EditJobPage = ({updateJob}) => {
               id="contact_phone"
               name="contact_phone"
               className="border rounded w-full py-2 px-3"
-              placeholder="Optional phone htmlFor applicants"
+              placeholder="Optional phone for applicants"
               value={contactPhone}
               onChange={(e) => setContactPhone(e.target.value)}
             />
